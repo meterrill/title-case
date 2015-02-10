@@ -18,3 +18,13 @@ var titleCase = function(word) {
   });
     return newTitle.trim();
 };
+
+$(function() {
+  $("form").submit(function(event) {
+    var titleInput = $("input#phrase").val();
+    var title = titleCase(titleInput);
+    $("#title").text(title);
+
+    event.preventDefault();
+  });
+});
